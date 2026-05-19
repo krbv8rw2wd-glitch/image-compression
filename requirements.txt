@@ -1,0 +1,8 @@
+gradio
+opencv-python
+numpy
+PyWavelets
+scikit-image
+scipy
+Pillow
+matplotlib
