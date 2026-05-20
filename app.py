@@ -1236,9 +1236,14 @@ with gr.Blocks(title="Image Compression with Parallel Processing") as demo:
 
 if __name__ == "__main__":
     import os
+    # Get the port assigned by Render (or default to 10000 for local testing)
     port = int(os.environ.get("PORT", 10000))
     try:
         mp.set_start_method('spawn', force=True)
     except RuntimeError:
-        pass
-    demo.launch(server_name="0.0.0.0", server_port=port, css=CUSTOM_CSS)
+        pass  # already set or not needed
+    demo.launch(
+        server_name="0.0.0.0",   # listen on all network interfaces
+        server_port=port,        # use Render's dynamic port
+        css=CUSTOM_CSS          # keep your custom styling
+    )
