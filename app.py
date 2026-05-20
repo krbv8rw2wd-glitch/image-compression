@@ -1171,13 +1171,13 @@ with gr.Blocks(title="Image Compression with Parallel Processing") as demo:
                 # Removed unsupported arguments: sources, show_download_button, show_share_button
                 orig_display = gr.Image(
                     type="numpy", label=None, height=300,
-                    interactive=False, show_label=False
+                    interactive=True, show_label=False
                 )
             with gr.Column():
                 gr.HTML('<div class="image-label">Compressed image</div>')
                 comp_display = gr.Image(
                     type="numpy", label=None, height=300,
-                    interactive=False, show_label=False
+                    interactive=True, show_label=False
                 )
 
         with gr.Row():
